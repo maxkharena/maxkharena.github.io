@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Key</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Attract Top Talent" />
+    <meta
+      property="og:description"
+      content="Gamification is a relatively recent buzzword. Everyone talks about it, but very few really know how to leverage the benefits of gamified strategies applied to various business areas. This trend can already be seen in mainstream corporate management, but Keyconnect intends to stay ahead of the game by introducing it and implementing it into recruitment."
+    />
+    <meta
+      property="og:image"
+      content="https://keyconnect-img.s3.eu-north-1.amazonaws.com/content/SharingStory.png"
+    />
+    <meta
+      property="og:url"
+      content="https://keyconnect.se/backend/api/users/share?type=story&id=482"
+    />
+    <meta
+      property="og:site_name"
+      content="https://keyconnect.se/backend/api/users/share?type=story&id=482"
+    />
+    <link
+      rel="canonical"
+      href="https://keyconnect.se/backend/api/users/share?type=story&id=482"
+    />
+    <meta name="twitter:card" content="summary" />
+  </head>
+
+  <body>
+    <script>
+      const getSearchParam = (param, search) =>
+        search
+          .slice(search.indexOf("?") + 1)
+          .split("&")
+          .reduce((linkValue, hash) => {
+            const [key, val] = hash.split("=");
+            return key === param ? val : linkValue;
+          }, "");
+
+      const id = getSearchParam("id", window.location.search);
+      const type = getSearchParam("type", window.location.search);
+      const ref = getSearchParam("refUrl", window.location.search);
+      const env = "live";
+      const contentUrl = "/company/story/keyconnect-ab/attract-top-talent/482";
+
+      if (env !== "live") {
+        switch (type) {
+          case "post":
+            window.location.href = `https://${env}.keyconnect.se/post/${id}`;
+            break;
+
+          case "story":
+            window.location.href = `https://${env}.keyconnect.se${contentUrl}?refUrl=${ref}`;
+            break;
+
+          case "company":
+            window.location.href = `https://${env}.keyconnect.secompanies${contentUrl}?refUrl=${ref}`;
+            break;
+        }
+      }
+      if (env === "live") {
+        switch (type) {
+          case "post":
+            window.location.href = `https://keyconnect.se/post/${id}`;
+            break;
+
+          case "story":
+            window.location.href = `https://keyconnect.se${contentUrl}?refUrl=${ref}`;
+            break;
+
+          case "company":
+            window.location.href = `https://keyconnect.se/companies${contentUrl}?refUrl=${ref}`;
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>
